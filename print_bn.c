@@ -15,12 +15,6 @@ int print_bn(int buffer_counter, char *buffer, va_list args)
 	int binary;
 
 	number = va_arg(args, unsigned int);
-	if (number == 0)
-	{
-		buffer[buffer_counter] = '0';
-		buffer_counter++;
-		return (buffer_counter);
-	}
 	binary = 1;
 	cup = number;
 	while (cup > 1)
