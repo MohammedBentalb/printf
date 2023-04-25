@@ -10,13 +10,10 @@
 
 int print_bn(int buffer_counter, char *buffer, va_list args)
 {
+	unsigned int number = va_arg(args, unsigned int);
+	unsigned int cup = number;
+	int binary = 1;
 
-	unsigned int number, cup;
-	int binary;
-
-	number = va_arg(args, unsigned int);
-	binary = 1;
-	cup = number;
 	while (cup > 1)
 	{
 		binary = binary * 2;
@@ -24,12 +21,12 @@ int print_bn(int buffer_counter, char *buffer, va_list args)
 	}
 	cup = number;
 	while (binary > 0)
-		{
+	{
 		buffer[buffer_counter] = ('0' + (cup / binary));
 		cup = cup % binary;
 		binary = binary / 2;
 		buffer_counter++;
-		}
+	}
 
 	return (buffer_counter);
-	}
+}
