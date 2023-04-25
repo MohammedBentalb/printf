@@ -1,29 +1,18 @@
 #include "main.h"
+
 /**
- * print_rev - substitute %r by argument number in reverse
- * @buffer: string
+ * print_perc - Function to print a persent character in buffer
+ * @buffer_counter: giving the index of the buffer
+ * @buffer: buffer
  * @args: arguments
- * @buffer_counter: number (buffer index)
  * Return: Return buffer_counter
  */
-int print_rev(int buffer_counter, char *buffer, va_list args)
+int print_perc(int buffer_counter, char *buffer, va_list args)
 {
-int i = 0;
-char *str;
+	(void) args;
 
-str = va_arg(args, char *);
-if (str)
-{
+	buffer[buffer_counter] = '%';
+	buffer_counter++;
 
-while (str[i] != '\0')
-i++;
-i = i - 1;
-while (i >= 0)
-{
-buffer[buffer_counter] = str[i];
-buffer_counter++;
-i--;
-}
-}
-return (buffer_counter);
+	return (buffer_counter);
 }
