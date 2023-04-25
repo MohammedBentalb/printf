@@ -10,7 +10,7 @@ int _printf(const char *format, ...)
 	va_list args;
 	int i = 0, j = 0, buffer_counter = 0;
 	re_t functions[] = {
-		{'%', print_perc}, {'c', print_char}, {'s', print_str},
+		{'%', print_perc}, {'c', print_char}, {'s', print_str}, {'b', print_bn},
 		{'d', print_int}, {'i', print_int}, {'r', print_rev}, {'\0', NULL}};
 	if (!format || (format[i] == '%' && format[i + 1] == '\0'))
 		return (-1);
